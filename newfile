@@ -1,0 +1,5 @@
+standardization = StandardScaler().fit(X_train)
+X_train_standard = standardization.transform(X_train)
+
+logistic_lasso = LogisticRegression(penalty='l1', C=estimator.best_estimator_.named_steps['logistic'].C)
+logistic_lasso.fit(X_train_standard, y_train)
